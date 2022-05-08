@@ -1,0 +1,66 @@
+<mat-toolbar color="primary">
+    <span>Travel UP</span>
+</mat-toolbar>
+
+<mat-grid-list cols="3" rowHeight="700px">
+    <mat-grid-tile [colspan]="3">
+
+
+
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Admin Panel Login</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content class="mar">
+                <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                    <mat-grid-list cols="3 " rowHeight="50px">
+                        <mat-grid-tile [colspan]="3">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>UserName</mat-label>
+                                <input matInput placeholder="Username">
+                            </mat-form-field>
+
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="3">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput placeholder="Password">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="1">
+                            capt
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="2">
+
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="1">
+                            forgetPassword
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="2">
+
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="3" style="background:#ff0000; border-radius: 5px;"  role="alert"
+                        *ngIf="f.submitted && isLoginFailed">
+                            <p class="mat-subheading-2" style="color: white;">  Login failed: {{ errorMessage }}</p>
+                        </mat-grid-tile>
+
+
+
+
+                    </mat-grid-list>
+                    <mat-card-actions [align]="'end'">
+                        <button mat-button>Login</button>
+        
+                    </mat-card-actions>
+                </form>
+
+            </mat-card-content>
+           
+        </mat-card>
+
+
+
+
+    </mat-grid-tile>
+</mat-grid-list>
