@@ -19,6 +19,12 @@ import { RouterModule } from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EntrepriseComponent } from './dashbord/pages/entreprise/entreprise.component';
+import { FormEntrepriseComponent } from './dashbord/pages/entreprise/form-entreprise/form-entreprise.component';
+import { NavBarFrontComponent } from './front/nav-bar-front/nav-bar-front.component';
+import { LandingPageComponent } from './front/landing-page/landing-page.component';
+import { HomePageComponent } from './front/home-page/home-page.component';
+import { FrontComponent } from './front/front/front.component';
+import { SignupComponent } from './front/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,13 @@ import { EntrepriseComponent } from './dashbord/pages/entreprise/entreprise.comp
     TripComponent,
     UserComponent,
     UserFormComponent,
-     EntrepriseComponent
+     EntrepriseComponent,
+     FormEntrepriseComponent,
+     NavBarFrontComponent,
+     LandingPageComponent,
+     HomePageComponent,
+     FrontComponent,
+     SignupComponent
 
   ],
   imports: [

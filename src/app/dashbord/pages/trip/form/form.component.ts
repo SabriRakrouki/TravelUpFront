@@ -121,9 +121,7 @@ export class FormComponent implements OnInit {
     })
   }
 
-  onChange() {
-
-  }
+ 
 
 
   addTrip() {

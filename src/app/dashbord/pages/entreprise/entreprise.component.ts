@@ -5,6 +5,7 @@ import { Entreprise } from 'src/app/Models/Entreprise';
 import { EntrepriseService } from 'src/app/Service/entreprise.service';
 import {MatPaginator} from '@angular/material/paginator';
 import { FormComponent } from '../trip/form/form.component';
+import { FormEntrepriseComponent } from './form-entreprise/form-entreprise.component';
 @Component({
   selector: 'app-entreprise',
   templateUrl: './entreprise.component.html',
@@ -45,11 +46,24 @@ export class EntrepriseComponent implements AfterViewInit,OnInit {
     dialfConf.width="60%";
     dialfConf.data=row;
     console.log(row)
-    this.dialog.open(FormComponent,dialfConf,).afterClosed().subscribe((val)=>{
+    this.dialog.open(FormEntrepriseComponent,dialfConf,).afterClosed().subscribe((val)=>{
       if(val==='Update'){
         this.getAllEntreprise()
       }
     
     });
+    
   }
-}
+  onCreate(){
+  
+    const dialfConf=new MatDialogConfig();
+    dialfConf.disableClose=true;
+    dialfConf.autoFocus=true;
+    dialfConf.width="60%";
+    this.dialog.open(FormEntrepriseComponent,dialfConf).afterClosed().subscribe((val)=>{
+      if(val==='Save'){
+        this.getAllEntreprise()
+      }
+    
+    });
+}}

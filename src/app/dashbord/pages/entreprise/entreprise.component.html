@@ -1,7 +1,7 @@
 <mat-grid-list cols="12" >
     <mat-grid-tile  [colspan]="4"> <input matInput placeholder="Search bar"  class="inputClass" > </mat-grid-tile>
     <mat-grid-tile [colspan]="4">2</mat-grid-tile>
-    <mat-grid-tile [colspan]="4"><button mat-raised-button style="width: 30%;" color="primary" >Create</button></mat-grid-tile>
+    <mat-grid-tile [colspan]="4"><button mat-raised-button (click)="onCreate()" style="width: 30%;" color="primary" >Create</button></mat-grid-tile>
 
   </mat-grid-list>
   

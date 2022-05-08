@@ -22,6 +22,7 @@ export class EntrepriseService {
     return this.httpClient.post(`${this.API_URL}/signup/entreprise`,entreprise)
   }
   editEntreprise(id:number,entreprise:Entreprise){
+    entreprise.id=id;
     return this.httpClient.put(`${this.API_URL}/updateEntreprise/${id}`,entreprise)
   }
   deleteEntreprise(id:any){

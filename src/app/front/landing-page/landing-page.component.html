@@ -1,0 +1,59 @@
+<mat-grid-list cols="2"  class="test">
+<mat-grid-tile  >
+<div>
+  <h1 class="textstyle">Travel Up</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2 class="textstyleunder"> &nbsp;&nbsp;We Make easy </h2>
+  <br>
+  <h2 class="textstyleunder"> for you </h2>
+</div>
+
+
+</mat-grid-tile>
+<mat-grid-tile style="align-content:center ; ">
+
+  <mat-card class="example-card">
+    
+
+    <mat-card-content class="mar">
+        <form  name="form" (ngSubmit)="onSubmit()" [formGroup]="loginForm" #f="ngForm" novalidate>
+            <mat-grid-list cols="3 " rowHeight="50px">
+                <mat-grid-tile [colspan]="3">
+                    <mat-form-field class="example-full-width" appearance="fill"  style="width:80% ;">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" placeholder="Username">
+                    </mat-form-field>
+
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="3">
+                    <mat-form-field class="example-full-width" appearance="fill"  style="width:80% ;">
+                        <mat-label>Password</mat-label>
+                        <input type="password" formControlName="password" matInput placeholder="Password">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="3">
+                  <button mat-raised-button color="primary" style="width:100%;">Connect</button>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="3">
+                  <a href="#">Forgot password?</a>
+              </mat-grid-tile>
+                <mat-grid-tile [colspan]="3">
+                    <hr style="border-top: 2px solid black; width:100% ;"> 
+                </mat-grid-tile>
+            </mat-grid-list>
+           
+        </form>
+        <mat-grid-list cols="3"><mat-grid-tile [colspan]="3">
+          <button mat-raised-button color="accent" (click)="CreateAucc()" style="width:100%;">Create new account</button>
+        </mat-grid-tile></mat-grid-list>
+    </mat-card-content>
+   
+</mat-card>
+
+
+</mat-grid-tile>
+
+</mat-grid-list>
