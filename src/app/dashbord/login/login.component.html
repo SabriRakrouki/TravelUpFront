@@ -13,19 +13,19 @@
             </mat-card-header>
 
             <mat-card-content class="mar">
-                <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="onSubmit()" [formGroup]="loginForm" #f="ngForm" novalidate>
                     <mat-grid-list cols="3 " rowHeight="50px">
                         <mat-grid-tile [colspan]="3">
                             <mat-form-field class="example-full-width" appearance="fill">
-                                <mat-label>UserName</mat-label>
-                                <input matInput placeholder="Username">
+                                <mat-label>Username</mat-label>
+                                <input matInput formControlName="username" placeholder="Username">
                             </mat-form-field>
 
                         </mat-grid-tile>
                         <mat-grid-tile [colspan]="3">
                             <mat-form-field class="example-full-width" appearance="fill">
                                 <mat-label>Password</mat-label>
-                                <input type="password" matInput placeholder="Password">
+                                <input type="password" formControlName="password" matInput placeholder="Password">
                             </mat-form-field>
                         </mat-grid-tile>
                         <mat-grid-tile [colspan]="1">

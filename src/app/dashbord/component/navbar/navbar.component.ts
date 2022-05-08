@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { TokenStorageService } from 'src/app/Service/Auth/token-storage.service';
 
 
 
@@ -26,8 +27,8 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/post",
-    title: "Posts",
+    path: "./entreprise",
+    title: "Entreprise",
     icon: "icon-pin",
     class: "" },
   {
@@ -77,6 +78,10 @@ ngOnInit(): void {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,private tokenStorageService: TokenStorageService) {}
+  logout(): void {
+    this.tokenStorageService.signOut();
+    window.location.href ='/admin';
 
+  }
 }

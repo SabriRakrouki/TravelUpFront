@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/Service/Auth/authentication.service';
 import { TokenStorageService } from 'src/app/Service/Auth/token-storage.service';
 
@@ -17,24 +18,31 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-  constructor(private authService: AuthenticationService, private tokenStorage: TokenStorageService) { }
+  loginForm!:FormGroup;
+  constructor(private formBuilder: FormBuilder,private authService: AuthenticationService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.loginForm=this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    })
+
+
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
     }
   }
   onSubmit(): void {
-    const { username, password } = this.form;
-    this.authService.login(username, password).subscribe(
+    
+    this.authService.login(this.loginForm.get('username')?.value, this.loginForm.get('password')?.value).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+        window.location.href ='/dashbord';
       },
       err => {
         this.errorMessage = err.error.message;

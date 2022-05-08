@@ -18,6 +18,7 @@ import { MaterialUiModule } from './MaterialUi/material-ui.module';
 import { RouterModule } from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EntrepriseComponent } from './dashbord/pages/entreprise/entreprise.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LocationPipe,
     NavbarComponent,
     LoginComponent,
-    FormComponent,TripComponent,UserComponent,UserFormComponent
+    FormComponent,
+    TripComponent,
+    UserComponent,
+    UserFormComponent,
+     EntrepriseComponent
 
   ],
   imports: [

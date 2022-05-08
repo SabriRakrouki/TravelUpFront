@@ -1,7 +1,7 @@
 import { User } from "./User";
 
 export class Entreprise extends User{
-    registrationNumber:any;
+    resgistrationNumber:any;
     name:any;
     capacity:any;
     domain:any;
