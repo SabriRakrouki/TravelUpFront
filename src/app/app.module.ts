@@ -25,6 +25,8 @@ import { LandingPageComponent } from './front/landing-page/landing-page.componen
 import { HomePageComponent } from './front/home-page/home-page.component';
 import { FrontComponent } from './front/front/front.component';
 import { SignupComponent } from './front/signup/signup.component';
+import { ComplaintComponent } from './dashbord/pages/complaint/complaint/complaint.component';
+import { FormComplaintComponent } from './dashbord/pages/complaint/form-complaint/form-complaint/form-complaint.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { SignupComponent } from './front/signup/signup.component';
      LandingPageComponent,
      HomePageComponent,
      FrontComponent,
-     SignupComponent
+     SignupComponent,
+     ComplaintComponent,
+     FormComplaintComponent
 
   ],
   imports: [

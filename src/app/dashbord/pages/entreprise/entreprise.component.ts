@@ -15,7 +15,8 @@ export class EntrepriseComponent implements AfterViewInit,OnInit {
   dataSource!:MatTableDataSource<Entreprise>;
   displayedColumns!: string[] ;
   listEntreprise!:Entreprise[];
-  constructor(private entrepriseService:EntrepriseService,private dialog:MatDialog) { }
+  constructor(private entrepriseService:EntrepriseService,
+    private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.getAllEntreprise();
