@@ -1,0 +1,75 @@
+<mat-grid-list cols="12" >
+    <mat-grid-tile  [colspan]="4"> <input matInput placeholder="Search bar"  class="inputClass" > </mat-grid-tile>
+    <mat-grid-tile [colspan]="4">2</mat-grid-tile>
+    <mat-grid-tile [colspan]="4"><button mat-raised-button (click)="onCreate()" style="width: 30%;" color="primary" >Create</button></mat-grid-tile>
+
+  </mat-grid-list>
+  
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="resgistrationNumber">
+        <th mat-header-cell *matHeaderCellDef> Resgistration number </th>
+        <td mat-cell *matCellDef="let element"> {{element.resgistrationNumber}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="capacity">
+        <th mat-header-cell *matHeaderCellDef> Capacity </th>
+        <td mat-cell *matCellDef="let element"> {{element.capacity}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="domain">
+        <th mat-header-cell *matHeaderCellDef> Domain </th>
+        <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
+      </ng-container>
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> Username </th>
+        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef> PhoneNumber </th>
+        <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+      </ng-container>
+      <ng-container matColumnDef="dateCreation">
+        <th mat-header-cell *matHeaderCellDef> Date creation </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateCreation|date}} </td>
+      </ng-container>
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete</th>
+        <td mat-cell *matCellDef="let element">  <button mat-icon-button color="warn" (click)="deleteEntreprise(element.id)" >
+            <mat-icon>delete</mat-icon>
+          </button> </td>
+      </ng-container>
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update</th>
+        <td mat-cell *matCellDef="let element">  <button mat-icon-button color="primary" (click)="updateEntreprise(element)" >
+            <mat-icon>mode_edit</mat-icon>
+          </button> </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  
