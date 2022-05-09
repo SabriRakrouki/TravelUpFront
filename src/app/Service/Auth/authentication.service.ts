@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { ApiService } from './ApiService';
 const AUTH_API = 'http://localhost:8091/travelup/api/v1/auth/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -9,14 +11,21 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthenticationService {
+  private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
+  isLoggedIn$ = this._isLoggedIn$.asObservable();
 
- 
-  constructor(private http:HttpClient) { }
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(AUTH_API + 'signin', {
-      username,
-      password
-    }, httpOptions);
+  constructor(private apiService: ApiService) {
+    const token = localStorage.getItem('profanis_auth');
+    this._isLoggedIn$.next(!!token);
+  }
+
+  login(username: string, password: string) {
+    return this.apiService.login(username, password).pipe(
+      tap((response: any) => {
+        this._isLoggedIn$.next(true);
+        localStorage.setItem('profanis_auth', response.token);
+      })
+    );
   }
   
 }
