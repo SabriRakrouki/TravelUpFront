@@ -27,16 +27,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LocationPipe } from './utile/LocationPipe';
+import {MatCardModule} from '@angular/material/card'; 
+import { DetailTripComponent } from './dashbord/pages/trip/detail-trip/detail-trip.component';
+import { ProgramFormComponent } from './dashbord/pages/trip/detail-trip/program-form/program-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     LocationPipe,
     NavbarComponent,
     TripComponent,
-    FormComponent
+    FormComponent,
+    DetailTripComponent,
+    ProgramFormComponent,
+    
   ],
   imports: [
     BrowserModule,
+    MatCardModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,

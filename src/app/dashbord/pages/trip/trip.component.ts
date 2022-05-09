@@ -23,7 +23,7 @@ export class TripComponent implements AfterViewInit,OnInit {
   ngOnInit(): void {
   this.getAllTrip()
   
-   this.displayedColumns=['id', 'tripLocation', 'description', 'entreprise','employee','departDate','arrivalDate','delete','update'];
+   this.displayedColumns=['id', 'tripLocation', 'description', 'entreprise','employee','departDate','arrivalDate','delete','update','Details'];
    this.dataSource = new MatTableDataSource<Trip>(this.listTrip);
   }
   getAllTrip(){
@@ -73,6 +73,9 @@ onUpdate(row:any){
   
   });
 
+}
+onDetails(row:any){
+  
 }
 
 
