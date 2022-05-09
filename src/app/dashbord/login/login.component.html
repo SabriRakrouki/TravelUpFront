@@ -28,14 +28,14 @@
                                 <input type="password" formControlName="password" matInput placeholder="Password">
                             </mat-form-field>
                         </mat-grid-tile>
-                        <mat-grid-tile [colspan]="1">
-                            capt
+                        <mat-grid-tile [colspan]="3"  [rowspan]="2" rowHeight="200px">
+                            <ngx-recaptcha2 #captchaElem
+                             [siteKey]="siteKey"  formControlName="recaptcha"  >
+                             </ngx-recaptcha2>
                         </mat-grid-tile>
-                        <mat-grid-tile [colspan]="2">
-
-                        </mat-grid-tile>
+                        
                         <mat-grid-tile [colspan]="1">
-                            forgetPassword
+                            forget Password?
                         </mat-grid-tile>
                         <mat-grid-tile [colspan]="2">
 

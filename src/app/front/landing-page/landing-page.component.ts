@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog,MatDialogConfig} from '@angular/material/dialog';
 import { AuthenticationService } from 'src/app/Service/Auth/authentication.service';
 import { TokenStorageService } from 'src/app/Service/Auth/token-storage.service';
 import { SignupComponent } from '../signup/signup.component';
@@ -11,17 +11,21 @@ import { SignupComponent } from '../signup/signup.component';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+  siteKey:string;
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
   loginForm!:FormGroup;
-  constructor(public dialog: MatDialog,private formBuilder: FormBuilder,private authService: AuthenticationService, private tokenStorage: TokenStorageService) { }
+  constructor(public dialog: MatDialog,private formBuilder: FormBuilder,private authService: AuthenticationService, private tokenStorage: TokenStorageService) {
+    this.siteKey='6Ldxp8AfAAAAAADVGAy3vllm6bCGcE6QpYWt6dGr';
+   }
 
   ngOnInit(): void {
     this.loginForm=this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
+      recaptcha: ['', Validators.required]
     })
 
 
@@ -51,10 +55,14 @@ export class LandingPageComponent implements OnInit {
     window.location.reload();
   }
   CreateAucc(){
-    const dialogRef = this.dialog.open(SignupComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
+    const dialfConf=new MatDialogConfig();
+    dialfConf.disableClose=true;
+    dialfConf.autoFocus=true;
+    dialfConf.width="80%";
+   
+    this.dialog.open(SignupComponent,dialfConf).afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
+ 
 }

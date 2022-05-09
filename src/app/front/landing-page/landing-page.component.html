@@ -1,14 +1,14 @@
 <mat-grid-list cols="2"  class="test">
 <mat-grid-tile  >
 <div>
-  <h1 class="textstyle">Travel Up</h1>
+  <h1 class="textstyle">TRAVEL UP</h1>
   <br>
   <br>
   <br>
   <br>
   <h2 class="textstyleunder"> &nbsp;&nbsp;We Make easy </h2>
   <br>
-  <h2 class="textstyleunder"> for you </h2>
+  <h2 class="textstyleunder">  for you </h2>
 </div>
 
 
@@ -34,6 +34,11 @@
                         <input type="password" formControlName="password" matInput placeholder="Password">
                     </mat-form-field>
                 </mat-grid-tile>
+                <mat-grid-tile [colspan]="3"  [rowspan]="2" rowHeight="200px">
+                  <ngx-recaptcha2 #captchaElem
+                   [siteKey]="siteKey"  formControlName="recaptcha" required >
+                   </ngx-recaptcha2>
+              </mat-grid-tile>
                 <mat-grid-tile [colspan]="3">
                   <button mat-raised-button color="primary" style="width:100%;">Connect</button>
                 </mat-grid-tile>

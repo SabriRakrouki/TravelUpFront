@@ -25,6 +25,7 @@ import { LandingPageComponent } from './front/landing-page/landing-page.componen
 import { HomePageComponent } from './front/home-page/home-page.component';
 import { FrontComponent } from './front/front/front.component';
 import { SignupComponent } from './front/signup/signup.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { SignupComponent } from './front/signup/signup.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-   MaterialUiModule
+   MaterialUiModule,
+   NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

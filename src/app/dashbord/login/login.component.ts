@@ -9,7 +9,7 @@ import { TokenStorageService } from 'src/app/Service/Auth/token-storage.service'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  siteKey:string;
   form: any = {
     username: null,
     password: null
@@ -19,12 +19,15 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
   loginForm!:FormGroup;
-  constructor(private formBuilder: FormBuilder,private authService: AuthenticationService, private tokenStorage: TokenStorageService) { }
+  constructor(private formBuilder: FormBuilder,private authService: AuthenticationService, private tokenStorage: TokenStorageService) { 
+    this.siteKey='6Ldxp8AfAAAAAADVGAy3vllm6bCGcE6QpYWt6dGr';
+  }
 
   ngOnInit(): void {
     this.loginForm=this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
+      recaptcha: ['', Validators.required]
     })
 
 
