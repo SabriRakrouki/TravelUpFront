@@ -1,0 +1,66 @@
+<mat-toolbar color="primary">
+    <span>Travel UP</span>
+</mat-toolbar>
+
+<mat-grid-list cols="3" rowHeight="700px">
+    <mat-grid-tile [colspan]="3">
+
+
+
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Admin Panel Login</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content class="mar">
+                <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="onSubmit()" [formGroup]="loginForm" #f="ngForm" novalidate>
+                    <mat-grid-list cols="3 " rowHeight="50px">
+                        <mat-grid-tile [colspan]="3">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Username</mat-label>
+                                <input matInput formControlName="username" placeholder="Username">
+                            </mat-form-field>
+
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="3">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Password</mat-label>
+                                <input type="password" formControlName="password" matInput placeholder="Password">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="3"  [rowspan]="2" rowHeight="200px">
+                            <ngx-recaptcha2 #captchaElem
+                             [siteKey]="siteKey"  formControlName="recaptcha"  >
+                             </ngx-recaptcha2>
+                        </mat-grid-tile>
+                        
+                        <mat-grid-tile [colspan]="1">
+                            forget Password?
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="2">
+
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="3" style="background:#ff0000; border-radius: 5px;"  role="alert"
+                        *ngIf="f.submitted && isLoginFailed">
+                            <p class="mat-subheading-2" style="color: white;">  Login failed: {{ errorMessage }}</p>
+                        </mat-grid-tile>
+
+
+
+
+                    </mat-grid-list>
+                    <mat-card-actions [align]="'end'">
+                        <button mat-button>Login</button>
+        
+                    </mat-card-actions>
+                </form>
+
+            </mat-card-content>
+           
+        </mat-card>
+
+
+
+
+    </mat-grid-tile>
+</mat-grid-list>

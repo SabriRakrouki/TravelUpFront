@@ -6,58 +6,57 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './dashbord/component/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
+
 import { TripComponent } from './dashbord/pages/trip/trip.component';
-import {  MatPaginatorModule } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
-import {MatGridListModule} from '@angular/material/grid-list'; 
-import {MatInputModule} from '@angular/material/input'; 
-import {MatDialogModule} from '@angular/material/dialog';
-import { FormComponent } from './dashbord/pages/trip/form/form.component'; 
-import {MatCheckboxModule} from '@angular/material/checkbox'; 
-import {MatDatepickerModule} from '@angular/material/datepicker'; 
-import {MatSelectModule} from '@angular/material/select';
-import {MatRadioModule} from '@angular/material/radio';  
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormComponent } from './dashbord/pages/trip/form/form.component';
 import { LocationPipe } from './utile/LocationPipe';
+import { UserComponent } from './dashbord/pages/user/user.component';
+import { UserFormComponent } from './dashbord/pages/user/user-form/user-form.component';
+import { LoginComponent } from './dashbord/login/login.component';
+import { MaterialUiModule } from './MaterialUi/material-ui.module';
+import { RouterModule } from '@angular/router';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EntrepriseComponent } from './dashbord/pages/entreprise/entreprise.component';
+import { FormEntrepriseComponent } from './dashbord/pages/entreprise/form-entreprise/form-entreprise.component';
+import { NavBarFrontComponent } from './front/nav-bar-front/nav-bar-front.component';
+import { LandingPageComponent } from './front/landing-page/landing-page.component';
+import { HomePageComponent } from './front/home-page/home-page.component';
+import { FrontComponent } from './front/front/front.component';
+import { SignupComponent } from './front/signup/signup.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
+
 @NgModule({
   declarations: [
     AppComponent,
     LocationPipe,
     NavbarComponent,
+    LoginComponent,
+    FormComponent,
     TripComponent,
-    FormComponent
+    UserComponent,
+    UserFormComponent,
+     EntrepriseComponent,
+     FormEntrepriseComponent,
+     NavBarFrontComponent,
+     LandingPageComponent,
+     HomePageComponent,
+     FrontComponent,
+     SignupComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
     LayoutModule,
-    ReactiveFormsModule,
     FormsModule,
-    MatNativeDateModule,
-    
-    MatRadioModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    MatGridListModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,MatPaginatorModule,MatTableModule
+   MaterialUiModule,
+   NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
