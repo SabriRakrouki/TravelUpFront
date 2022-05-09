@@ -10,6 +10,7 @@ import { TokenStorageService } from 'src/app/Service/Auth/token-storage.service'
 })
 export class LoginComponent implements OnInit {
   siteKey:string;
+  currentUser:any;
   form: any = {
     username: null,
     password: null
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
+    this.currentUser=this.tokenStorage.getUser();
 
     this.loginForm=this.formBuilder.group({
       username: ['', Validators.required],

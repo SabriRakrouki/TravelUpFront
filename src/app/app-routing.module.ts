@@ -8,8 +8,9 @@ import { UserComponent } from './dashbord/pages/user/user.component';
 import { FrontComponent } from './front/front/front.component';
 import { HomePageComponent } from './front/home-page/home-page.component';
 import { LandingPageComponent } from './front/landing-page/landing-page.component';
+import { IsAuthenticatedGuardGuard } from './Service/Auth/is-authenticated-guard.guard';
 
-const routes: Routes = [{path:"dashbord",component:NavbarComponent,children:[
+const routes: Routes = [{path:"dashbord",component:NavbarComponent,canActivate:[IsAuthenticatedGuardGuard],children:[
   {path:'user',component:UserComponent},
   {path:'trip',component:TripComponent},
   {path:'entreprise',component:EntrepriseComponent}
