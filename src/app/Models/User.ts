@@ -5,6 +5,7 @@ export abstract class User{
     password:any;
     phoneNumber:any;
     photo:any;
+    bornPlace:any;
     dateCreation:any;
 
 }

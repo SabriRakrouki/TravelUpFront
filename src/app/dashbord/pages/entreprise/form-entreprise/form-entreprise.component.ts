@@ -15,6 +15,7 @@ export class FormEntrepriseComponent implements OnInit {
   entrepriseForm!:FormGroup;
   entrepriseEntity:Entreprise={
     id:null,
+    bornPlace:null,
     username:null,
     capacity:null,
     dateCreation:null,

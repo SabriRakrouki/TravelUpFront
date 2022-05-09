@@ -7,7 +7,7 @@
    
     <mat-grid-list cols="12" rowHeight="50px">
       <mat-grid-tile 
-          [colspan]="6" >
+          [colspan]="3" >
           <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Name</mat-label>
               <input matInput formControlName="name" placeholder="Name" >
@@ -15,43 +15,45 @@
             
       </mat-grid-tile>
       <mat-grid-tile
-      [colspan]="6" >
+      [colspan]="3" >
       <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Username</mat-label>
           <input matInput formControlName="username" placeholder="Username" >
         </mat-form-field>
         
   </mat-grid-tile>
-     
+  <mat-grid-tile
+  [colspan]="3" >
+  <mat-form-field class="example-full-width"  appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput  formControlName="password" placeholder="Password" type="password" >
+    </mat-form-field>
+    
+</mat-grid-tile>
+<mat-grid-tile
+[colspan]="3" >
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Resgistration Number</mat-label>
+    <input matInput formControlName="resgistrationNumber" placeholder="resgistrationNumber" >
+  </mat-form-field>
+  
+</mat-grid-tile>
     </mat-grid-list>
+  
     <mat-grid-list cols="12" rowHeight="50px">
       <mat-grid-tile
-          [colspan]="6" >
-          <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Password</mat-label>
-              <input matInput  formControlName="password" placeholder="Password" type="password" >
-            </mat-form-field>
-            
-      </mat-grid-tile>
-      <mat-grid-tile
-      [colspan]="6" >
-      <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Resgistration Number</mat-label>
-          <input matInput  formControlName="resgistrationNumber" placeholder="Resgistration Number" >
-        </mat-form-field>
-        
-  </mat-grid-tile>
-     
-    </mat-grid-list>
-    <mat-grid-list cols="12" rowHeight="50px">
-      <mat-grid-tile
-          [colspan]="12" >
-          <mat-form-field class="example-full-width" style="width:70% ;" appearance="fill">
+          [colspan]="8" >
+          <mat-form-field class="example-full-width" style="width:80% ;" appearance="fill">
               <mat-label>Email</mat-label>
               <input matInput formControlName="email" placeholder="Email@email.com"  type="email" >
             </mat-form-field>
             
       </mat-grid-tile>
+      <mat-grid-tile
+      [colspan]="4" >
+      
+        
+  </mat-grid-tile>
   
     </mat-grid-list>
     <mat-grid-list cols="12" rowHeight="50px">
@@ -86,7 +88,7 @@
       </mat-grid-tile>
     </mat-grid-list>
     <mat-grid-list cols="12">
-      <mat-grid-tile [colspan]="12">
+      <mat-grid-tile [colspan]="4">
         <mat-form-field class="example-full"  appearance="fill">
           <mat-label>Domain</mat-label>
           <input type="text"
@@ -103,27 +105,22 @@
           </mat-autocomplete>
         </mat-form-field>
       </mat-grid-tile>
-     </mat-grid-list>
-     
-    <mat-grid-list cols="12" rowHeight="50px">
       <mat-grid-tile
-          [colspan]="6" >
-          <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Capacity</mat-label>
-              <input matInput  formControlName="capacity" placeholder="Capacity"  type="number" >
-            </mat-form-field>
-            
-      </mat-grid-tile>
-      <mat-grid-tile
-      [colspan]="6" >
+      [colspan]="4" >
       <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Phone Number</mat-label>
-          <input matInput type="tel" formControlName="phoneNumber"  placeholder="Phone Number">
+          <mat-label>Capacity</mat-label>
+          <input matInput  formControlName="capacity" placeholder="Capacity"  type="number" >
         </mat-form-field>
         
   </mat-grid-tile>
- 
-    </mat-grid-list>
+  <mat-grid-tile
+  [colspan]="4" >
+  <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput type="tel" formControlName="phoneNumber"  placeholder="Phone Number">
+    </mat-form-field>
+</mat-grid-tile>
+     </mat-grid-list>
   
     
 </form>

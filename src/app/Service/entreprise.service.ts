@@ -18,8 +18,8 @@ export class EntrepriseService {
   getAllEntreprises():Observable<Entreprise[]>{
     return this.httpClient.get<Entreprise[]>(`${this.API_URL}/entreprise/retrieveEntreprises`)
   }
-  addEntreprise(entreprise:any){
-    return this.httpClient.post(`${this.API_URL}/signup/entreprise`,entreprise)
+  addEntreprise(entreprise:any):Observable<Entreprise>{
+    return this.httpClient.post<Entreprise>(`${this.API_URL}/signup/entreprise`,entreprise,this.httpOptions)
   }
   editEntreprise(id:number,entreprise:Entreprise){
     entreprise.id=id;

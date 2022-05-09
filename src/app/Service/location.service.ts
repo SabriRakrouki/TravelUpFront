@@ -10,6 +10,8 @@ import { LocationModel } from '../Models/LocationModel';
 export class LocationService {
   readonly API_URL = "http://localhost:8091/travelup/api/v1/trip";
   readonly  LOC_API_LINK="http://localhost:8091/travelup/api/v1/location";
+  readonly  LOC_API_USER="http://localhost:8091/travelup/api/v1/location";
+
   private locations!: Observable<LocationModel[]>;
   constructor(private httpClient: HttpClient) { }
   getAllCounrties(): Observable<LocationModel[]> {
@@ -39,7 +41,9 @@ export class LocationService {
   addLocationToTrip(idLoc:number,idTrip:number){
     return this.httpClient.post(`${this.API_URL}/addLocation/${idLoc}/${idTrip}`,null);
   }
-  addLocationToUser(){
+  addLocationToUser(idUser:any,idLoc:any){
+    return this.httpClient.post(`${this.API_URL}/addLocation/${idUser}/${idLoc}`,null);
+
     
   }
   

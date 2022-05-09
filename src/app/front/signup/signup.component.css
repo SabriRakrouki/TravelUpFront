@@ -1,4 +1,7 @@
 .example-full {
-    width: 70%;
+    width: 60%;
   }
   .test{height: 50%;}
+  .example-full-width{
+    width: 60%;
+  }
