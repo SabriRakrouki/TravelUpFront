@@ -13,12 +13,17 @@ import { FrontComponent } from './front/front/front.component';
 import { HomePageComponent } from './front/home-page/home-page.component';
 import { LandingPageComponent } from './front/landing-page/landing-page.component';
 import { IsAuthenticatedGuardGuard } from './Service/Auth/is-authenticated-guard.guard';
+import { DomainComponent } from './dashbord/pages/domain/domain.component';
 
 
 const routes: Routes = [{path:"dashbord",component:NavbarComponent,canActivate:[IsAuthenticatedGuardGuard],children:[
   {path:'user',component:UserComponent},
-  {path:'trip',component:TripComponent},
-  {path:'entreprise',component:EntrepriseComponent}
+  {path:'trip',children:[
+    {path:"",component:TripComponent},
+    
+    {path:'details/:id',component:DetailTripComponent}]},
+  {path:'entreprise',component:EntrepriseComponent},
+  {path:'domain',component:DomainComponent}
 
 ]
 

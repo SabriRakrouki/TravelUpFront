@@ -16,6 +16,8 @@ export class TripComponent implements AfterViewInit,OnInit {
   dataSource!:MatTableDataSource<Trip>;
   displayedColumns!: string[] ;
   listTrip!:Trip[];
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   
   constructor(private tripService:TripService,private dialog:MatDialog){
 
@@ -40,7 +42,6 @@ export class TripComponent implements AfterViewInit,OnInit {
 
 
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }

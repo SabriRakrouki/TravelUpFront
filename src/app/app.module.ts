@@ -31,6 +31,7 @@ import { HomePageComponent } from './front/home-page/home-page.component';
 import { FrontComponent } from './front/front/front.component';
 import { SignupComponent } from './front/signup/signup.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { DomainComponent } from './dashbord/pages/domain/domain.component';
 
 
 
@@ -56,7 +57,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
      LandingPageComponent,
      HomePageComponent,
      FrontComponent,
-     SignupComponent
+     SignupComponent,
+     DomainComponent
 
   ],
   imports: [
