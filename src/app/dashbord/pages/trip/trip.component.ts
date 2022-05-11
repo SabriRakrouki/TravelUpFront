@@ -16,19 +16,25 @@ export class TripComponent implements AfterViewInit,OnInit {
   dataSource!:MatTableDataSource<Trip>;
   displayedColumns!: string[] ;
   listTrip!:Trip[];
+  search!:string;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
   
   constructor(private tripService:TripService,private dialog:MatDialog){
 
   }
   ngOnInit(): void {
   this.getAllTrip()
-  
-   this.displayedColumns=['id', 'tripLocation', 'description', 'entreprise','employee','departDate','arrivalDate','delete','update'];
+   this.displayedColumns=['id', 'tripLocation', 'description', 'entreprise','employee','departDate','arrivalDate','delete','update','Details'];
    this.dataSource = new MatTableDataSource<Trip>(this.listTrip);
+   this.ngAfterViewInit();
   }
   getAllTrip(){
     this.tripService.getAllTrips().subscribe((res)=>{this.listTrip=res;
       this.dataSource = new MatTableDataSource<Trip>(this.listTrip);
+      this.dataSource.paginator = this.paginator;
     })
   }
  
@@ -40,10 +46,7 @@ export class TripComponent implements AfterViewInit,OnInit {
 
 
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+ 
 
 onCreate(){
   
@@ -73,6 +76,13 @@ onUpdate(row:any){
   
   });
 
+}
+onDetails(row:any){
+  
+}
+applyFilter(event: Event) {
+  const filterValue = (event.target as HTMLInputElement).value;
+  this.dataSource.filter = filterValue.trim().toLowerCase();
 }
 
 

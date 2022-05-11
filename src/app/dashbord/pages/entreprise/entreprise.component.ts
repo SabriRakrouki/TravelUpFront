@@ -15,12 +15,14 @@ export class EntrepriseComponent implements AfterViewInit,OnInit {
   dataSource!:MatTableDataSource<Entreprise>;
   displayedColumns!: string[] ;
   listEntreprise!:Entreprise[];
+
   constructor(private entrepriseService:EntrepriseService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.getAllEntreprise();
    this.displayedColumns=['id', 'resgistrationNumber', 'capacity','username','email','phoneNumber','dateCreation','delete','update'];
    this.dataSource = new MatTableDataSource<Entreprise>(this.listEntreprise);
+   this.ngAfterViewInit();
   }
   getAllEntreprise(){
     this.entrepriseService.getAllEntreprises().subscribe((res)=>{this.listEntreprise=res;
@@ -34,8 +36,12 @@ export class EntrepriseComponent implements AfterViewInit,OnInit {
   deleteEntreprise(identreprise:number){
 
     
-    this.entrepriseService.deleteEntreprise(identreprise).subscribe(()=>{
-      this.getAllEntreprise();
+    this.entrepriseService.deleteEntreprise(identreprise).subscribe({
+      next:()=>{
+        this.getAllEntreprise()
+      },error:(err)=>{
+        console.log(err)
+      }
     })
   }
   updateEntreprise(row:any){
@@ -66,4 +72,10 @@ export class EntrepriseComponent implements AfterViewInit,OnInit {
       }
     
     });
-}}
+}
+applyFilter(event: Event) {
+  const filterValue = (event.target as HTMLInputElement).value;
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+}
+
+}
