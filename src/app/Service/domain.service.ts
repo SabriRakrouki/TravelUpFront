@@ -19,6 +19,7 @@ export class DomainService {
       return this.httpClient.get<Domain[]>(`${this.API_URL}/getallDomain`);
     }
     addDomain(domain:Domain){
+      console.log(domain)
       return this.httpClient.post(`${this.API_URL}/addDomain`,domain)
     }
     editDomain(domain:Domain){
@@ -27,6 +28,8 @@ export class DomainService {
     deleteDomain(id:number):Observable<any>{
       return this.httpClient.delete<any>(`${this.API_URL}/deletDomain/${id}`)
     }
-
+    addDomainToEntreprise(idEntre:number,domain:Domain){
+      return this.httpClient.post(`${this.API_URL}/afftcterent/${idEntre}`,domain);
+    }
 
 }

@@ -32,6 +32,20 @@ import { FrontComponent } from './front/front/front.component';
 import { SignupComponent } from './front/signup/signup.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { DomainComponent } from './dashbord/pages/domain/domain.component';
+import { DomainFormComponent } from './dashbord/pages/domain/domain-form/domain-form.component';
+
+import { PositionComponent } from './dashbord/pages/position/position.component';
+import { PositionFormComponent } from './dashbord/pages/position/position-form/position-form.component';
+import { ProfileButtonComponent } from './front/nav-bar-front/profile-button/profile-button.component';
+import { MessageComponent } from './front/message/message.component';
+import { PostComponent } from './dashbord/pages/post/post.component';
+import { PostFormComponent } from './dashbord/pages/post/post-form/post-form.component';
+import { TopicComponent } from './dashbord/pages/topic/topic.component';
+import { CommentComponent } from './dashbord/pages/comment/comment.component';
+import { TopicPipe } from './utile/TopicPipe';
+import { TopicFormComponent } from './dashbord/pages/topic/topic-form/topic-form.component';
+import { CommentFormComponent } from './dashbord/pages/comment/comment-form/comment-form.component';
+
 
 
 
@@ -39,6 +53,7 @@ import { DomainComponent } from './dashbord/pages/domain/domain.component';
   declarations: [
     AppComponent,
     LocationPipe,
+    TopicPipe,
     NavbarComponent,
     LoginComponent,
     FormComponent,
@@ -58,7 +73,18 @@ import { DomainComponent } from './dashbord/pages/domain/domain.component';
      HomePageComponent,
      FrontComponent,
      SignupComponent,
-     DomainComponent
+     DomainComponent,
+     DomainFormComponent,
+     PositionComponent,
+     PositionFormComponent,
+     ProfileButtonComponent,
+     MessageComponent,
+     PostComponent,
+     PostFormComponent,
+     TopicComponent,
+     CommentComponent,
+     TopicFormComponent,
+     CommentFormComponent
 
   ],
   imports: [

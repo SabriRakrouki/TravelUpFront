@@ -1,0 +1,29 @@
+
+
+
+
+<div mat-dialog-title>
+    <span>{{actionTitile}}</span>
+</div>
+  <div mat-dialog-content>
+ <form [formGroup]="domainForm">
+    <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile
+            [colspan]="6" >
+            <mat-form-field class="example-full-width" style="width: 30%;" appearance="fill">
+                <mat-label>domain</mat-label>
+                <input matInput formControlName="domain" placeholder="domain Name" >
+              </mat-form-field>
+              
+        </mat-grid-tile></mat-grid-list>
+ </form>
+</div>
+  <div mat-dialog-action [align]="'end'">
+      
+    <button mat-raised-button color="warn" (click)="onClose()" style="margin-right: 10px;">Close</button>
+    <button mat-raised-button color="primary" (click)="addDomain()" >{{actionBtn}}</button>
+
+  </div>
+  
+ 
+   

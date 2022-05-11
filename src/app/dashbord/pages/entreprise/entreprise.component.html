@@ -1,5 +1,5 @@
 <mat-grid-list cols="12" >
-    <mat-grid-tile  [colspan]="4"> <input matInput placeholder="Search bar"  class="inputClass" > </mat-grid-tile>
+    <mat-grid-tile  [colspan]="4"> <input matInput placeholder="Search bar"  class="inputClass" (keyup)="applyFilter($event)" > </mat-grid-tile>
     <mat-grid-tile [colspan]="4">2</mat-grid-tile>
     <mat-grid-tile [colspan]="4"><button mat-raised-button (click)="onCreate()" style="width: 30%;" color="primary" >Create</button></mat-grid-tile>
 
@@ -67,9 +67,6 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                   showFirstLastButtons 
-                   aria-label="Select page of periodic elements">
-    </mat-paginator>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
   </div>
   

@@ -14,25 +14,44 @@ import { HomePageComponent } from './front/home-page/home-page.component';
 import { LandingPageComponent } from './front/landing-page/landing-page.component';
 import { IsAuthenticatedGuardGuard } from './Service/Auth/is-authenticated-guard.guard';
 import { DomainComponent } from './dashbord/pages/domain/domain.component';
+import { PositionComponent } from './dashbord/pages/position/position.component';
+import { MessageComponent } from './front/message/message.component';
+import { PostComponent } from './dashbord/pages/post/post.component';
+import { TopicComponent } from './dashbord/pages/topic/topic.component';
+import { CommentComponent } from './dashbord/pages/comment/comment.component';
 
 
-const routes: Routes = [{path:"dashbord",component:NavbarComponent,canActivate:[IsAuthenticatedGuardGuard],children:[
-  {path:'user',component:UserComponent},
-  {path:'trip',children:[
-    {path:"",component:TripComponent},
-    
-    {path:'details/:id',component:DetailTripComponent}]},
-  {path:'entreprise',component:EntrepriseComponent},
-  {path:'domain',component:DomainComponent}
+const routes: Routes = [{
+  path: "dashbord", component: NavbarComponent, canActivate: [IsAuthenticatedGuardGuard], children: [
+    { path: 'user', component: UserComponent },
+    {
+      path: 'trip', children: [
+        { path: "", component: TripComponent },
 
-]
+        { path: 'details/:id', component: DetailTripComponent }]
+    },
+    {path:'post',component:PostComponent},
+    { path: 'entreprise', component: EntrepriseComponent },
+    { path: 'domain', component: DomainComponent },
+    {path:'position',component:PositionComponent},
+    {path:'topic',component:TopicComponent},
+    {path:'comment',component:CommentComponent}
 
-},{
-  path:"admin",component:LoginComponent},
-  {path:"",redirectTo:"travelup",pathMatch:"full"},
-  {path:"travelup",component:LandingPageComponent,children:[
-    {path:"",component:FrontComponent},{path:"home",component:HomePageComponent}
-  ]}
+  ]
+
+}, {
+  path: "admin", component: LoginComponent
+},
+{path:"home",component:FrontComponent,children:[
+  {path:'forum',component:HomePageComponent},
+  {path:'message',component:MessageComponent},
+]},
+{ path: "", redirectTo: "travelup", pathMatch: "full" },
+{
+  path: "travelup", component: LandingPageComponent, children: [
+    { path: "", component: FrontComponent }, { path: "home", component: HomePageComponent }
+  ]
+}
 
 ];
 

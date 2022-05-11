@@ -1,4 +1,4 @@
-export abstract class User{
+export  class User{
     id:any;
     username:any;
     email:any;
