@@ -5,6 +5,7 @@ import { DetailTripComponent } from './dashbord/pages/trip/detail-trip/detail-tr
 
 import { NavbarComponent } from './dashbord/component/navbar/navbar.component';
 import { LoginComponent } from './dashbord/login/login.component';
+import { ComplaintComponent } from './dashbord/pages/complaint/complaint/complaint.component';
 import { EntrepriseComponent } from './dashbord/pages/entreprise/entreprise.component';
 
 import { TripComponent } from './dashbord/pages/trip/trip.component';
@@ -21,13 +22,13 @@ import { TopicComponent } from './dashbord/pages/topic/topic.component';
 import { CommentComponent } from './dashbord/pages/comment/comment.component';
 
 
+
 const routes: Routes = [{
   path: "dashbord", component: NavbarComponent, canActivate: [IsAuthenticatedGuardGuard], children: [
     { path: 'user', component: UserComponent },
     {
       path: 'trip', children: [
         { path: "", component: TripComponent },
-
         { path: 'details/:id', component: DetailTripComponent }]
     },
     {path:'post',component:PostComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [{
     { path: 'domain', component: DomainComponent },
     {path:'position',component:PositionComponent},
     {path:'topic',component:TopicComponent},
-    {path:'comment',component:CommentComponent}
+    {path:'comment',component:CommentComponent},
+    {path:'complaint',component:ComplaintComponent}
 
   ]
 

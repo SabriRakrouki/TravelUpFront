@@ -1,0 +1,54 @@
+
+<div mat-dialog-title>
+    <span>Details complaint</span>
+</div>
+  <div mat-dialog-content>
+ <form [formGroup]="complaintForm">
+   
+     
+      <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile
+            [colspan]="6" >
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Content</mat-label>
+                <input matInput formControlName="content" placeholder="Content" readonly >
+              </mat-form-field>
+              
+        </mat-grid-tile>
+        <mat-grid-tile
+        [colspan]="6" >
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>State</mat-label>
+            <input matInput formControlName="state" placeholder="State" readonly>
+          </mat-form-field>
+          
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]="6" >
+    <mat-form-field appearance="fill">
+        <mat-label>date</mat-label>
+        <input matInput formControlName="dateComplaint"  readonly>
+        
+      </mat-form-field>
+      
+</mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile
+            [colspan]="6" >
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Employee</mat-label>
+                <input matInput  formControlName="employeId" placeholder="Employee" type="number" readonly >
+              </mat-form-field>   
+        </mat-grid-tile>
+      </mat-grid-list>  
+ </form>
+</div>
+  <div mat-dialog-action [align]="'end'">
+      
+    <button mat-raised-button color="warn" (click)="onClose()" style="margin-right: 10px;">Close</button>
+
+  </div>
+  
+ 
+   

@@ -30,6 +30,7 @@ import { LandingPageComponent } from './front/landing-page/landing-page.componen
 import { HomePageComponent } from './front/home-page/home-page.component';
 import { FrontComponent } from './front/front/front.component';
 import { SignupComponent } from './front/signup/signup.component';
+
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { DomainComponent } from './dashbord/pages/domain/domain.component';
 import { DomainFormComponent } from './dashbord/pages/domain/domain-form/domain-form.component';
@@ -48,6 +49,13 @@ import { CommentFormComponent } from './dashbord/pages/comment/comment-form/comm
 
 
 
+
+
+import { ComplaintComponent } from './dashbord/pages/complaint/complaint/complaint.component';
+import { FormComplaintComponent } from './dashbord/pages/complaint/form-complaint/form-complaint/form-complaint.component';
+import { ComplaintDetailsComponent } from './dashbord/pages/complaint/complaint-details/complaint-details.component';
+import { ChartsModule } from 'ng2-charts';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -73,6 +81,7 @@ import { CommentFormComponent } from './dashbord/pages/comment/comment-form/comm
      HomePageComponent,
      FrontComponent,
      SignupComponent,
+
      DomainComponent,
      DomainFormComponent,
      PositionComponent,
@@ -84,7 +93,13 @@ import { CommentFormComponent } from './dashbord/pages/comment/comment-form/comm
      TopicComponent,
      CommentComponent,
      TopicFormComponent,
-     CommentFormComponent
+     CommentFormComponent,
+
+     ComplaintComponent,
+     FormComplaintComponent,
+     ComplaintDetailsComponent,
+
+
 
   ],
   imports: [
@@ -97,7 +112,12 @@ import { CommentFormComponent } from './dashbord/pages/comment/comment-form/comm
     ReactiveFormsModule,
     HttpClientModule,
    MaterialUiModule,
-   NgxCaptchaModule
+
+   NgxCaptchaModule,
+
+   ChartsModule,
+   CommonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

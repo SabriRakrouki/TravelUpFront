@@ -50,8 +50,12 @@ export const ROUTES: RouteInfo[] = [
       class: ""
     },
   {
+
     path: "./post",
     title: "Posts",
+
+   
+
     icon: "icon-bell-55",
     class: ""
   },
@@ -71,6 +75,12 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "./message",
     title: "Messages",
+    icon: "icon-align-center",
+    class: ""
+  },
+  {
+    path: "./complaint",
+    title: "Complaint",
     icon: "icon-align-center",
     class: ""
   }
