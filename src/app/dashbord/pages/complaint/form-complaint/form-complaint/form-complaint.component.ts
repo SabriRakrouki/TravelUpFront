@@ -10,7 +10,7 @@ import { ComplaintService } from 'src/app/Service/complaint.service';
   styleUrls: ['./form-complaint.component.css']
 })
 export class FormComplaintComponent implements OnInit {
-  actionTitile:string="New Entreprise";
+  actionTitile:string="New complaint";
   actionBtn:string="Save";
   complaintForm!:FormGroup;
   entrepriseComplaint:Complaint={
@@ -35,7 +35,7 @@ export class FormComplaintComponent implements OnInit {
       if(this.editDate){
 
         this.actionBtn="Update";
-        this.actionTitile="Update Trip";
+        this.actionTitile="Update complaint";
         
         this.complaintForm.controls["content"].setValue(this.editDate.content)
         this.complaintForm.controls["state"].setValue(this.editDate.state)

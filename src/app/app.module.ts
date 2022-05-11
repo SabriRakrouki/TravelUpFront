@@ -27,7 +27,9 @@ import { FrontComponent } from './front/front/front.component';
 import { SignupComponent } from './front/signup/signup.component';
 import { ComplaintComponent } from './dashbord/pages/complaint/complaint/complaint.component';
 import { FormComplaintComponent } from './dashbord/pages/complaint/form-complaint/form-complaint/form-complaint.component';
-
+import { ComplaintDetailsComponent } from './dashbord/pages/complaint/complaint-details/complaint-details.component';
+import { ChartsModule } from 'ng2-charts';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,9 @@ import { FormComplaintComponent } from './dashbord/pages/complaint/form-complain
      FrontComponent,
      SignupComponent,
      ComplaintComponent,
-     FormComplaintComponent
+     FormComplaintComponent,
+     ComplaintDetailsComponent,
+
 
   ],
   imports: [
@@ -58,7 +62,9 @@ import { FormComplaintComponent } from './dashbord/pages/complaint/form-complain
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-   MaterialUiModule
+   MaterialUiModule,
+   ChartsModule,
+   CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
