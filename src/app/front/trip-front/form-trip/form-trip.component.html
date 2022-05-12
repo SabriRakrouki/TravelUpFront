@@ -1,0 +1,104 @@
+
+
+
+
+<div mat-dialog-title>
+    <span>{{actionTitile}}</span>
+</div>
+  <div mat-dialog-content>
+ <form [formGroup]="tripForm">
+    <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile
+            [colspan]="4" >
+            <mat-form-field appearance="fill">
+                <mat-label>Contry</mat-label>
+                <mat-select formControlName="country" (selectionChange)="getStateByCountry($event.value)" >
+                <mat-option *ngFor="let country of listCountry" [value]="country" >{{country.country}}</mat-option>
+
+                </mat-select>
+              </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile
+            [colspan]="4" >
+            <mat-form-field appearance="fill">
+                <mat-label>State</mat-label>
+                <mat-select formControlName="state" (selectionChange)="getCityByCountryAndState($event.value)"> 
+                <mat-option *ngFor="let state of listState" [value]="state" >{{state.state}}</mat-option>
+            
+
+
+                </mat-select>
+              </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile
+            [colspan]="4" >
+            <mat-form-field appearance="fill">
+                <mat-label>City</mat-label>
+                <mat-select formControlName="city" >
+                    <mat-option *ngFor="let city of listCities" [value]="city.city" >{{city.city}}</mat-option>
+
+                </mat-select>
+              </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile
+            [colspan]="12" >
+            <mat-form-field style="width: 800px;" appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description"  placeholder="Ex. It makes me feel..." style="width:1000px"></textarea>
+              </mat-form-field>
+        </mat-grid-tile>
+       
+      </mat-grid-list>
+      <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile
+            [colspan]="6" >
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput formControlName="arrivalDate" [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              
+        </mat-grid-tile>
+        <mat-grid-tile
+        [colspan]="6" >
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput   formControlName="departDate" [matDatepicker]="picker1">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          
+    </mat-grid-tile>
+       
+      </mat-grid-list>
+     
+      <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile
+            [colspan]="6" >
+        </mat-grid-tile>
+        <mat-grid-tile
+        [colspan]="6" >
+        
+    
+    
+        
+          
+    </mat-grid-tile>
+       
+      </mat-grid-list>
+ </form>
+</div>
+  <div mat-dialog-action [align]="'end'">
+      
+    <button mat-raised-button color="warn" (click)="onClose()" style="margin-right: 10px;">Close</button>
+    <button mat-raised-button color="primary" (click)="addTrip()" >{{actionBtn}}</button>
+
+  </div>
+  
+ 
+   

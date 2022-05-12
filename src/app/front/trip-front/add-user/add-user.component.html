@@ -1,0 +1,34 @@
+
+
+
+
+<div mat-dialog-title>
+    <span>Add new User To Trip</span>
+</div>
+  <div mat-dialog-content>
+ <form [formGroup]="userForm">
+    <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile
+            [colspan]="4" >
+            <mat-form-field appearance="fill">
+                <mat-label>User</mat-label>
+                <mat-select formControlName="country"  >
+                <mat-option *ngFor="let user of listUser" [value]="user" ></mat-option>
+
+                </mat-select>
+              </mat-form-field>
+        </mat-grid-tile>
+        
+      </mat-grid-list>
+      
+ </form>
+</div>
+  <div mat-dialog-action [align]="'end'">
+      
+    <button mat-raised-button color="warn" (click)="onClose()" style="margin-right: 10px;">Close</button>
+    <button mat-raised-button color="primary" (click)="AddUser()" >ADDUser</button>
+
+  </div>
+  
+ 
+   

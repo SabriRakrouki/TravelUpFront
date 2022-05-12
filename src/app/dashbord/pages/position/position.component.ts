@@ -30,6 +30,7 @@ export class PositionComponent implements OnInit {
       next: (res) => {
         this.listPosition = res;
         this.dataSource = new MatTableDataSource<Position>(this.listPosition);
+        this.dataSource.paginator = this.paginator;
 
       }, error(err) {
         console.log(err)

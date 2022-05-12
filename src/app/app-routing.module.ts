@@ -5,6 +5,7 @@ import { DetailTripComponent } from './dashbord/pages/trip/detail-trip/detail-tr
 
 import { NavbarComponent } from './dashbord/component/navbar/navbar.component';
 import { LoginComponent } from './dashbord/login/login.component';
+import { ComplaintComponent } from './dashbord/pages/complaint/complaint/complaint.component';
 import { EntrepriseComponent } from './dashbord/pages/entreprise/entreprise.component';
 
 import { TripComponent } from './dashbord/pages/trip/trip.component';
@@ -19,15 +20,18 @@ import { MessageComponent } from './front/message/message.component';
 import { PostComponent } from './dashbord/pages/post/post.component';
 import { TopicComponent } from './dashbord/pages/topic/topic.component';
 import { CommentComponent } from './dashbord/pages/comment/comment.component';
+import { ProfileUSerComponent } from './front/profile-user/profile-user.component';
+import { InvitationComponent } from './front/invitation/invitation.component';
+import { TripFrontComponent } from './front/trip-front/trip-front.component';
+
 
 
 const routes: Routes = [{
-  path: "dashbord", component: NavbarComponent, canActivate: [IsAuthenticatedGuardGuard], children: [
+  path: "dashbord", component: NavbarComponent, children: [
     { path: 'user', component: UserComponent },
     {
       path: 'trip', children: [
         { path: "", component: TripComponent },
-
         { path: 'details/:id', component: DetailTripComponent }]
     },
     {path:'post',component:PostComponent},
@@ -35,7 +39,8 @@ const routes: Routes = [{
     { path: 'domain', component: DomainComponent },
     {path:'position',component:PositionComponent},
     {path:'topic',component:TopicComponent},
-    {path:'comment',component:CommentComponent}
+    {path:'comment',component:CommentComponent},
+    {path:'complaint',component:ComplaintComponent}
 
   ]
 
@@ -45,6 +50,9 @@ const routes: Routes = [{
 {path:"home",component:FrontComponent,children:[
   {path:'forum',component:HomePageComponent},
   {path:'message',component:MessageComponent},
+  {path:'profile',component:ProfileUSerComponent},
+  {path:'invite',component:InvitationComponent}
+  ,{path:'trip',component:TripFrontComponent}
 ]},
 { path: "", redirectTo: "travelup", pathMatch: "full" },
 {
