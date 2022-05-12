@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
     id:null,
     username:null,
     capacity:null,
-    dateCreation:null,
+    dateCreation:null, bornPlace:null,roles:null,
     domain:null,
     email:null,
     employees:null,
@@ -76,6 +76,7 @@ getAllDomain(){
 addEntreprise(){
   console.log("test button")
     if(this.entrepriseForm.valid){
+     
       this.entrepriseService.addEntreprise(this.entrepriseForm.value).subscribe({
         next:()=>{
           console.log("added")
@@ -124,5 +125,15 @@ addEntreprise(){
         console.log("error parsing cities location");
       }
     })
+  }
+  checkDomain(dome:any):boolean{
+    let val:boolean=false;
+    this.listDomain.forEach((dom)=>{
+      if(dom.nameDomain===dome){
+         val=true;
+
+      }
+    })
+    return val
   }
 }

@@ -29,6 +29,7 @@ export class EntrepriseComponent implements AfterViewInit,OnInit {
   getAllEntreprise(){
     this.entrepriseService.getAllEntreprises().subscribe((res)=>{this.listEntreprise=res;
       this.dataSource = new MatTableDataSource<Entreprise>(this.listEntreprise);
+      this.dataSource.paginator = this.paginator;
     })
   }
   @ViewChild(MatPaginator) paginator!: MatPaginator;

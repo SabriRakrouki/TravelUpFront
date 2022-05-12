@@ -17,7 +17,9 @@ export class FormEntrepriseComponent implements OnInit {
     id:null,
     username:null,
     capacity:null,
+    bornPlace:null,
     dateCreation:null,
+    roles:null,
     domain:null,
     email:null,
     employees:null,
@@ -87,6 +89,8 @@ export class FormEntrepriseComponent implements OnInit {
       this.entrepriseService.editEntreprise(this.editDate.id,this.entrepriseEntity).subscribe({
         next:(res)=>{
           console.log("update succefuly");
+          this.entrepriseForm.reset();
+          this.dialogRef.close("Update")
         },error:(error)=>{
           console.log(error.message);
         }

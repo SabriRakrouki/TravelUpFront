@@ -62,6 +62,7 @@ import { ProfileUSerComponent } from './front/profile-user/profile-user.componen
 import { SignUpEmployeeComponent } from './front/sign-up-employee/sign-up-employee.component';
 import { FormTripComponent } from './front/trip-front/form-trip/form-trip.component';
 import { AddUserComponent } from './front/trip-front/add-user/add-user.component';
+import { authInterceptorProviders } from './Service/Auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -131,7 +132,7 @@ import { AddUserComponent } from './front/trip-front/add-user/add-user.component
    CommonModule
 
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

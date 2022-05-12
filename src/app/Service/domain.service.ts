@@ -8,19 +8,17 @@ import { Domain } from '../Models/Domain';
 })
 export class DomainService {
   readonly API_URL = 'http://localhost:8091/travelup/api/v1/domain'
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/text',
-      "Access-Control-Allow-Origin": "*",
-      
-    } )}
+   httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  }
+  
   constructor(private httpClient:HttpClient) { }
     getAllDomain():Observable<Domain[]>{
       return this.httpClient.get<Domain[]>(`${this.API_URL}/getallDomain`);
     }
-    addDomain(domain:Domain){
+    addDomain(domain:Domain):Observable<Domain>{
       console.log(domain)
-      return this.httpClient.post(`${this.API_URL}/addDomain`,domain)
+      return this.httpClient.post<Domain>(`${this.API_URL}/addDomain`,domain,this.httpOptions)
     }
     editDomain(domain:Domain){
       return this.httpClient.put(`${this.API_URL}/updateDomain/${domain.id}`,domain)
