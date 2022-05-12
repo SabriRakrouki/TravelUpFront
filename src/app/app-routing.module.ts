@@ -20,11 +20,14 @@ import { MessageComponent } from './front/message/message.component';
 import { PostComponent } from './dashbord/pages/post/post.component';
 import { TopicComponent } from './dashbord/pages/topic/topic.component';
 import { CommentComponent } from './dashbord/pages/comment/comment.component';
+import { ProfileUSerComponent } from './front/profile-user/profile-user.component';
+import { InvitationComponent } from './front/invitation/invitation.component';
+import { TripFrontComponent } from './front/trip-front/trip-front.component';
 
 
 
 const routes: Routes = [{
-  path: "dashbord", component: NavbarComponent, canActivate: [IsAuthenticatedGuardGuard], children: [
+  path: "dashbord", component: NavbarComponent, children: [
     { path: 'user', component: UserComponent },
     {
       path: 'trip', children: [
@@ -47,6 +50,9 @@ const routes: Routes = [{
 {path:"home",component:FrontComponent,children:[
   {path:'forum',component:HomePageComponent},
   {path:'message',component:MessageComponent},
+  {path:'profile',component:ProfileUSerComponent},
+  {path:'invite',component:InvitationComponent}
+  ,{path:'trip',component:TripFrontComponent}
 ]},
 { path: "", redirectTo: "travelup", pathMatch: "full" },
 {

@@ -56,6 +56,12 @@ import { FormComplaintComponent } from './dashbord/pages/complaint/form-complain
 import { ComplaintDetailsComponent } from './dashbord/pages/complaint/complaint-details/complaint-details.component';
 import { ChartsModule } from 'ng2-charts';
 import { CommonModule } from '@angular/common';
+import { InvitationComponent } from './front/invitation/invitation.component';
+import { TripFrontComponent } from './front/trip-front/trip-front.component';
+import { ProfileUSerComponent } from './front/profile-user/profile-user.component';
+import { SignUpEmployeeComponent } from './front/sign-up-employee/sign-up-employee.component';
+import { FormTripComponent } from './front/trip-front/form-trip/form-trip.component';
+import { AddUserComponent } from './front/trip-front/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +104,12 @@ import { CommonModule } from '@angular/common';
      ComplaintComponent,
      FormComplaintComponent,
      ComplaintDetailsComponent,
+     InvitationComponent,
+     TripFrontComponent,
+     ProfileUSerComponent,
+     SignUpEmployeeComponent,
+     FormTripComponent,
+     AddUserComponent,
 
 
 

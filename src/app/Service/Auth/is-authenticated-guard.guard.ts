@@ -8,7 +8,8 @@ import { AuthenticationService } from './authentication.service';
   providedIn: 'root'
 })
 export class IsAuthenticatedGuardGuard implements CanActivate {
-  constructor(private authService: AuthenticationService, private router: Router) {}
+  constructor(private authService: AuthenticationService,
+     private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -18,13 +19,12 @@ export class IsAuthenticatedGuardGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.authService.isLoggedIn$.pipe(
-      tap((isLoggedIn) => {
-        if (!isLoggedIn) {
-          this.router.navigate(['admin']);
-        }
-      })
-    );
-  }
+      if(localStorage.getItem('currentUser')){
+        console.log('test test etststtstststs')
+        return true;
+      }
+      this.router.navigate(['/travelup'],{queryParams:{returnUrl : state.url}});
+      return false;
+    }
   
 }

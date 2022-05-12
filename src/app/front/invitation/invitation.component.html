@@ -1,0 +1,32 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>  <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="gmail@gmail.com" >
+        
+
+      </mat-form-field>
+      <div mat-dialog-action [align]="'end'">
+      
+        <button mat-raised-button color="primary"style="margin-right: 10px;">add</button>
+    
+      </div></mat-grid-tile>
+    <mat-grid-tile>
+      <form [formGroup]="invForm">
+      <mat-form-field appearance="fill">
+        <mat-label>path</mat-label>
+        <input matInput formControlName="path" placeholder="Name" >
+        
+      </mat-form-field>        
+        <div class="file-upload">
+        
+        
+        
+            <button mat-mini-fab color="primary" class="upload-btn"
+             (click)="addInvitation()" >
+                <mat-icon>attach_file</mat-icon>
+            </button>
+        </div>
+      </form></mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+  </mat-grid-list>
+  

@@ -8,7 +8,7 @@ import { Complaint } from '../Models/Complaint';
 })
 export class ComplaintService {
 
-  API_URL = 'http://localhost:8091/travelup/api/v1/complaint';
+  API_URL = 'http://localhost:8091/travelup/api/v1/compaint';
   constructor(private httpClient: HttpClient) { }
   getAllComplaints():Observable<Complaint[]>{
 
